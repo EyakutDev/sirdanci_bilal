@@ -45,8 +45,23 @@ const GlobalStyles = () => {
     .section-title { font-size: 3rem; margin-bottom: 40px; position: relative; }
     .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--primary-yellow); margin: 20px auto 0; }
     
-    .cta-button { display: inline-block; margin-top: 30px; padding: 15px 35px; background-color: var(--primary-yellow); color: #000000; font-size: 1.2rem; font-weight: 700; border-radius: 5px; transition: all 0.3s ease; cursor: pointer; }
-    .cta-button:hover { background-color: #E0BD00; transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
+    .cta-button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 15px 35px;
+        background-color: var(--primary-yellow);
+        color: #000000;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .cta-button:hover {
+        background-color: #E0BD00;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 
     .app-header { background-color: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); padding: 15px 30px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--primary-yellow); width: 100%; box-sizing: border-box; }
     .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
@@ -63,14 +78,7 @@ const GlobalStyles = () => {
     
     .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
     .menu-item { background-color: var(--dark-card); padding: 30px; border-radius: 10px; border: 1px solid #222; transition: all 0.3s ease; }
-    
-    /* İSTEĞİNİZE GÖRE DÜZENLENEN BÖLÜM */
-    .menu-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Önceki koyu gölge efekti korundu */
-      border-color: var(--primary-yellow); /* Sadece sarı kenarlık eklendi */
-    }
-
+    .menu-item:hover { transform: translateY(-10px); border-color: var(--primary-yellow); box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1); }
     .menu-item h3 { font-size: 1.8rem; margin-top: 0; }
     .menu-item p { color: var(--light-text); line-height: 1.6; }
     .price { display: block; margin-top: 20px; font-size: 1.5rem; font-weight: 700; color: var(--primary-yellow); }
@@ -88,32 +96,13 @@ const GlobalStyles = () => {
     .social-links { margin-bottom: 20px; }
     .social-links a { margin: 0 15px; font-size: 1.2rem; font-weight: 700; }
     .copyright { font-size: 0.9rem; color: #888; }
-
     .floating-call-btn { position: fixed; bottom: 30px; right: 30px; z-index: 1010; width: 60px; height: 60px; background-color: var(--primary-yellow); color: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); transition: all 0.3s ease; transform-origin: center; }
     .floating-call-btn:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(255, 215, 0, 0.3); color: #000000; }
     .floating-call-btn::before { content: attr(data-tooltip); position: absolute; right: 75px; top: 50%; transform: translateY(-50%); background-color: #333; color: #fff; padding: 6px 12px; border-radius: 5px; white-space: nowrap; font-size: 0.9rem; font-weight: 700; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
     .floating-call-btn:hover::before { opacity: 1; visibility: visible; }
     
     .hamburger-menu { display: none; }
-    @media (max-width: 768px) {
-      nav .sc-link { display: none; }
-      .hamburger-menu { display: flex; flex-direction: column; justify-content: space-around; width: 2rem; height: 2rem; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1100; }
-      .hamburger-menu span { width: 2rem; height: 0.25rem; background: var(--primary-yellow); border-radius: 10px; transition: all 0.3s linear; position: relative; transform-origin: 1px; }
-      .nav-links { display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.95); position: fixed; top: 0; right: 0; height: 100vh; width: 100%; transition: transform 0.3s ease-in-out; transform: translateX(100%); z-index: 1050; }
-      .nav-links.open { transform: translateX(0); }
-      .nav-links .sc-link { display: block; font-size: 2rem; margin: 2rem 0; color: var(--primary-yellow); }
-      
-      .floating-call-btn {
-        display: flex !important;
-        width: 55px;
-        height: 55px;
-        bottom: 20px;
-        right: 20px;
-      }
-      .floating-call-btn::before {
-        display: none;
-      }
-    }
+    @media (max-width: 768px) { nav .sc-link { display: none; } .hamburger-menu { display: flex; flex-direction: column; justify-content: space-around; width: 2rem; height: 2rem; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1100; } .hamburger-menu span { width: 2rem; height: 0.25rem; background: var(--primary-yellow); border-radius: 10px; transition: all 0.3s linear; position: relative; transform-origin: 1px; } .nav-links { display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.95); position: fixed; top: 0; right: 0; height: 100vh; width: 100%; transition: transform 0.3s ease-in-out; transform: translateX(100%); z-index: 1050; } .nav-links.open { transform: translateX(0); } .nav-links .sc-link { display: block; font-size: 2rem; margin: 2rem 0; color: var(--primary-yellow); } }
   `;
     return <style>{allCSS}</style>
 };
@@ -162,7 +151,6 @@ const About = () => { return ( <section id="about" className="section"><h2 class
 const Menu = () => { const menuItems = [ { name: 'Şırdan', description: 'Adana usulü, bol baharatlı pirinç dolgulu, efsane lezzet.', price: '' }, { name: 'Mumbar', description: 'Kuzu bağırsağının iç pilav ile doldurulmasıyla hazırlanan, yöresel bir tat.', price: '' }, { name: 'Kelle Söğüş', description: 'İzmir klasiği. Bol yeşillik, domates, soğan ve beyin ile servis edilir.', price: '' }, { name: 'Midye Dolma', description: 'Tane tane, lezzetli iç pilavı ve taptaze midyeler.', price: '' }, ]; return ( <section id="menu" className="section"><h2 className="section-title">Ürünlerimiz</h2><div className="menu-grid">{menuItems.map((item, index) => ( <div className="menu-item" key={index}><h3>{item.name}</h3><p>{item.description}</p><span className="price">{item.price}</span></div> ))}</div></section> );};
 const Contact = () => { const address = "Zafer Caddesi no: 19/A Bornova, İzmir, Turkey 35100."; const phone = "0232 999 7 001"; const phoneDisplay = "0232 999 7 001"; const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`; return ( <section id="contact" className="section"><h2 className="section-title">Bize Ulaşın</h2><div className="contact-info"><p>Lezzete bir telefon kadar yakınsınız!</p><div className="info-item"><strong>Telefon:</strong><a href={`tel:+902329997001`}>{phoneDisplay}</a></div><div className="info-item"><strong>Adres:</strong><span>{address}</span></div><a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="cta-button">Yol Tarifi Al</a></div></section> );};
 const Footer = () => { const instagramUrl = "https://instagram.com/sirdancibilal"; const tiktokUrl = "https://tiktok.com/@sirdancibilal"; return ( <footer className="app-footer"><div className="social-links"><a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a><a href={tiktokUrl} target="_blank" rel="noopener noreferrer">TikTok</a></div><div className="copyright">© 2025 Şırdancı Bilal. Tüm Hakları Saklıdır.</div></footer> );};
-
 
 //--- ANA UYGULAMA BİLEŞENİ ---//
 function App() {
